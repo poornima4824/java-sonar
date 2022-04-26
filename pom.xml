@@ -1,37 +1,44 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-    <groupId>com.mt</groupId>
+	
+	<groupId>com.mt</groupId>
 	<artifactId>maven-web-application</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
+	
 	<name>maven-web-application</name>
+
 	<description>Maven Web Project for Java Programming Language</description>
+
 	<organization>
-		<name>Minfy Technologies</name>
-		<url>http://minfytechnologies.com/</url>
+		<name>Mithun Technologies</name>
+		<url>http://mithuntechnologies.com/</url>
 	</organization>
+
 	<properties>
 		<jdk.version>1.8</jdk.version>
 		<spring.version>5.3.19</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-
+		
 		<sonar.host.url>http://15.206.186.130:9000/</sonar.host.url>
-        <sonar.login>admin</sonar.login>
-		<sonar.password>poori4824</sonar.password> 
-		<sonar.log.level>DEBUG</sonar.log.level>
-        <sonar.verbose>true</sonar.verbose>
-        <sonar.coverage.exclusions>**/*.js</sonar.coverage.exclusions> 
+                <sonar.login>admin</sonar.login>
+		<sonar.password>poori4824</sonar.password>  
+                
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
 	</properties>
+
 	<dependencies>
+		
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
 			<version>20160212</version>
-		</dependency>	
+		</dependency>
+		
 		<!-- test dependencies -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -39,19 +46,23 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
 			<version>1.9.5</version>
 			<scope>test</scope>
 		</dependency>
+
 		<!-- compile dependencies -->
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -72,12 +83,16 @@
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		
+		<!-- provided dependencies -->
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
+		
 	</dependencies>
 	<!--
 	<distributionManagement>
@@ -89,20 +104,19 @@
 		<snapshotRepository>
 			<id>nexus</id>
 			<name>Snapshot</name>
-			<url>http://52.90.58.16:8081/repository/</url>
+			<url>http://52.90.58.16:8081/repository/wallmart-snapsot/</url>
 		</snapshotRepository>
          		
 	</distributionManagement>
 	-->
 	
-	 <repositories>
+	<repositories>
 		<repository>
 		     <id>nexus</id>
 		     <name>proxy-repo-mss</name>
-	              <url>http://3.110.88.104:8081/repository/maven-central/</url>
+	              <url>http://54.146.149.125:8081/repository/wallmart-proxy/</url>
 		</repository>
-		
-	</repositories> 
+	</repositories>
 
 	
 	<build>
