@@ -34,9 +34,6 @@ pipeline
      }
      stage('Execute Sonarqube Report')
      {
-         environment {
-             scannerHome = tool 'SonarQube Scanner'
-          }
          steps
          {
             withSonarQubeEnv('SonarQube') 
