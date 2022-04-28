@@ -1,19 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
 	<groupId>com.mt</groupId>
 	<artifactId>maven-web-application</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
-	
+	<packaging>war</packaging> 	
 	<name>maven-web-application</name>
-
 	<description>Maven Web Project for Java Programming Language</description>
 
 	<organization>
-		<name>Mithun Technologies</name>
-		<url>http://mithuntechnologies.com/</url>
+		<name>Minfy Technologies</name>
+		<url>http://minfytechnologies.com/</url>
 	</organization>
 
 	<properties>
@@ -22,10 +19,10 @@
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
 		
-		<sonar.host.url>http://3.111.55.197:9000/</sonar.host.url>
+		<sonar.host.url>http://13.235.67.113:9000/</sonar.host.url>
                 <sonar.login>admin</sonar.login>
 		<sonar.password>poori4824</sonar.password>  
-                
+        
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -104,19 +101,20 @@
 		<snapshotRepository>
 			<id>nexus</id>
 			<name>Snapshot</name>
-			<url>http://52.90.58.16:8081/repository/wallmart-snapsot/</url>
+			<url>http://52.90.58.16:8081/repository/</url>
 		</snapshotRepository>
          		
 	</distributionManagement>
 	-->
 	
-	<repositories>
+	<!-- <repositories>
 		<repository>
 		     <id>nexus</id>
 		     <name>proxy-repo-mss</name>
-	              <url>http://54.146.149.125:8081/repository/wallmart-proxy/</url>
+	              <url>http://3.110.88.104:8081/repository/maven-central/</url>
 		</repository>
-	</repositories>
+		
+	</repositories> -->
 
 	
 	<build>
@@ -155,28 +153,6 @@
 					<wtpContextName>maven-web-application</wtpContextName>
 				</configuration>
 			</plugin>
-			<plugin>
-         <groupId>org.jacoco</groupId>
-         <artifactId>jacoco-maven-plugin</artifactId>
-         <version>0.8.3</version>
-         <executions>
-            <execution>
-               <id>jacoco-initialize</id>
-               <goals>
-                  <goal>prepare-agent</goal>
-               </goals>
-               <phase>test-compile</phase>
-            </execution>
-            <execution>
-               <id>jacoco-site</id>
-               <phase>verify</phase>
-               <goals>
-                  <goal>report</goal>
-               </goals>
-            </execution>
-         </executions>
-      </plugin>
-
 			
 </plugins>
 	</build>
