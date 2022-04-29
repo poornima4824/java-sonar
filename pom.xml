@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<groupId>com.mt</groupId>
-	<artifactId>maven-web-application</artifactId>
+	<artifactId>java-sonar</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	
-	<name>maven-web-application</name>
+	<name>java-sonar</name>
 
 	<description>Maven Web Project for Java Programming Language</description>
 
@@ -154,7 +154,7 @@
 					<downloadSources>true</downloadSources>
 					<downloadJavadocs>true</downloadJavadocs>
 					<wtpversion>2.0</wtpversion>
-					<wtpContextName>maven-web-application</wtpContextName>
+					<wtpContextName>java-sonar</wtpContextName>
 				</configuration>
 			</plugin>
 			
