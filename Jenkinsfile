@@ -37,6 +37,7 @@ pipeline
                 echo 'Code Coverage'
                 jacoco()
             }
+     }
      stage('Execute Sonarqube Report')
      {
          steps
