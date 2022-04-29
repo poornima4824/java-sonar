@@ -39,7 +39,8 @@ pipeline
          {
             withSonarQubeEnv('sonar') 
              {
-                sh "mvn sonar:sonar"
+               // sh "mvn sonar:sonar"
+               sh "mvn sonar:sonar -Dsonar.host.url=http://3.110.117.150:9000/"
              }  
          }
      }
