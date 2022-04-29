@@ -141,7 +141,7 @@
 				<configuration>
 					<scanIntervalSeconds>10</scanIntervalSeconds>
 					<webApp>
-						<contextPath>/maven-web-application</contextPath>
+						<contextPath>/java-sonar</contextPath>
 					</webApp>
 				</configuration>
 			</plugin>
