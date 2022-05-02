@@ -68,6 +68,25 @@ pipeline
             }
          }
      }
-     
+     stage('Building docker image') {
+            steps {
+               script {
+                   sh 'docker build -t webapp .'
+                }
+            }
+        }
+     stage('stop previous containers') {
+         steps {
+            sh 'docker ps -f name=webcontainer -q | xargs --no-run-if-empty docker container stop'
+            sh 'docker container ls -a -fname=webcontainer -q | xargs -r docker container rm'
+         }
+       }
+      stage('Deploy the docker image') {
+            steps {
+                script {
+                   sh "docker run -d -p 9090:8080 --name webcontainer webapp "
+                }
+            }
+        }
  }    
 }
