@@ -88,5 +88,16 @@ pipeline
                 }
             }
         }
- }    
+        stage('JaCoCo') {
+            steps {
+                echo 'Code Coverage'
+                jacoco(execPattern: '**/target/**.exec',
+                    classPattern: '**/target/classes',
+                    sourcePattern: '**/src',
+                    changeBuildStatus: true,
+                    minimumInstructionCoverage: '30',
+                    maximumInstructionCoverage: '50')
+            }
+        }
+    }    
 }
