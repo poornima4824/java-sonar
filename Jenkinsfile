@@ -37,7 +37,7 @@ pipeline
                 emailext mimeType: 'text/html',
                 subject: "[Jenkins]${currentBuild.fullDisplayName}",
                 to: 'naga.poornima22@gmail.com',
-                body: '''<a href="${BUILD_URL}input">click to approve for Production Deployment</a>'''
+                body: '''<a href="${BUILD_URL}input">click to approve for Deployment</a>'''
             }
         }
         
@@ -71,7 +71,7 @@ pipeline
      stage('Building docker image') {
             steps {
                script {
-                   sh 'docker build -t webapp .'
+                   sh 'docker build -t java-webapp .'
                 }
             }
         }
@@ -84,7 +84,7 @@ pipeline
       stage('Deploy the docker image') {
             steps {
                 script {
-                   sh "docker run -d -p 9090:8080 --name webcontainer webapp "
+                   sh "docker run -d -p 9090:8080 --name webcontainer java-webapp "
                 }
             }
         }
