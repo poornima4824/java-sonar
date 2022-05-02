@@ -32,6 +32,20 @@ pipeline
              sh "mvn clean package"
          }
      }
+     stage('mail') {
+            steps {
+                emailext mimeType: 'text/html',
+                subject: "[Jenkins]${currentBuild.fullDisplayName}",
+                to: 'naga.poornima22@gmail.com',
+                body: '''<a href="${BUILD_URL}input">click to approve for Production Deployment</a>'''
+            }
+        }
+        
+      stage('Approval for deploy') {
+           steps {
+            input "deploy proceed?"
+              }
+        }
 
      stage('Execute Sonarqube Report')
      {
@@ -40,7 +54,7 @@ pipeline
             withSonarQubeEnv('sonar') 
              {
                // sh "mvn sonar:sonar"
-               sh "mvn sonar:sonar -Dsonar.host.url=http://54.159.53.182:9000/"
+               sh "mvn sonar:sonar -Dsonar.host.url=http://54.159.53.182:9000"
              }  
          }
      }
