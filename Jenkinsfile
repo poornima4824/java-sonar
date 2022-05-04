@@ -32,20 +32,20 @@ pipeline
              sh "mvn clean package"
          }
      }
-     stage('mail') {
-            steps {
-                emailext mimeType: 'text/html',
-                subject: "[Jenkins]${currentBuild.fullDisplayName}",
-                to: 'naga.poornima22@gmail.com',
-                body: '''<a href="${BUILD_URL}input">click to approve for Deployment</a>'''
-            }
-        }
+    //  stage('mail') {
+    //         steps {
+    //             emailext mimeType: 'text/html',
+    //             subject: "[Jenkins]${currentBuild.fullDisplayName}",
+    //             to: 'naga.poornima22@gmail.com',
+    //             body: '''<a href="${BUILD_URL}input">click to approve for Deployment</a>'''
+    //         }
+    //     }
         
-      stage('Approval for deploy') {
-           steps {
-            input "deploy proceed?"
-              }
-        }
+    //   stage('Approval for deploy') {
+    //        steps {
+    //         input "deploy proceed?"
+    //           }
+    //     }
 
      stage('Execute Sonarqube Report')
      {
@@ -94,16 +94,16 @@ pipeline
                 }
             }
         }
-        stage('JaCoCo') {
-            steps {
-                echo 'Code Coverage'
-                jacoco(execPattern: '**/target/**.exec',
-                    classPattern: '**/target/classes',
-                    sourcePattern: '**/src/main/java/com/mt/services/*.java',
-                    changeBuildStatus: true,
-                    minimumInstructionCoverage: '30',
-                    maximumInstructionCoverage: '50')
-            }
-        }
+        // stage('JaCoCo') {
+        //     steps {
+        //         echo 'Code Coverage'
+        //         jacoco(execPattern: '**/target/**.exec',
+        //             classPattern: '**/target/classes',
+        //             sourcePattern: '**/src/main/java/com/mt/services/*.java',
+        //             changeBuildStatus: true,
+        //             minimumInstructionCoverage: '30',
+        //             maximumInstructionCoverage: '50')
+        //     }
+        // }
     }    
 }
