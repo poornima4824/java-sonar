@@ -99,7 +99,7 @@ pipeline
                 echo 'Code Coverage'
                 jacoco(execPattern: '**/target/**.exec',
                     classPattern: '**/target/classes',
-                    sourcePattern: '**/src/main/java/com/mt/services/EmployeeService.java',
+                    sourcePattern: '**/src/main/java/com/mt/services/*.java',
                     changeBuildStatus: true,
                     minimumInstructionCoverage: '30',
                     maximumInstructionCoverage: '50')
