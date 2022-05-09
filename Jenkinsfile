@@ -47,33 +47,27 @@ pipeline
     //           }
     //     }
 
-     stage('Execute Sonarqube Report')
-     {
-         steps
-         {
-            withSonarQubeEnv('sonar') 
-             {
-               // sh "mvn sonar:sonar"
-               sh "mvn sonar:sonar -Dsonar.host.url=http://34.203.197.2:9000"
-             }  
-         }
-     }
-        // stage('JaCoCo') {
-        //     steps {
-        //         echo 'Code Coverage'
-        //         jacoco()
-        //     }
-        // }
-     stage('Quality Gate Check')
-     {
-         steps
-         {
-             timeout(time: 1, unit: 'HOURS') 
-             {
-                waitForQualityGate abortPipeline: true
-            }
-         }
-     }
+    //  stage('Execute Sonarqube Report')
+    //  {
+    //      steps
+    //      {
+    //         withSonarQubeEnv('sonar') 
+    //          {
+    //            // sh "mvn sonar:sonar"
+    //            sh "mvn sonar:sonar -Dsonar.host.url=http://34.203.197.2:9000"
+    //          }  
+    //      }
+    //  }
+    //  stage('Quality Gate Check')
+    //  {
+    //      steps
+    //      {
+    //          timeout(time: 1, unit: 'HOURS') 
+    //          {
+    //             waitForQualityGate abortPipeline: true
+    //         }
+    //      }
+    //  }
      stage('Building docker image') {
             steps {
                script {
