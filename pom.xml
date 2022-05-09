@@ -22,6 +22,11 @@
 		<spring.version>5.3.19</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
+		<!--  Used to locate the profile specific configuration file.  -->
+        <jacoco.it.execution.data.file> ./target/coverage-reports/jacoco-it.exec </jacoco.it.execution.data.file>
+        <jdk.version>1.7</jdk.version>
+         <jacoco.out.path>${session.executionRootDirectory}/target</jacoco.out.path>
+        <jacoco.out.file>jacoco.exec</jacoco.out.file>
 		<!--
 		<sonar.host.url>http://54.173.189.255:9000/</sonar.host.url>
                 <sonar.login>admin</sonar.login>
